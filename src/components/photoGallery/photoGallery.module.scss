@@ -1,0 +1,216 @@
+@import "src/styles/variables";
+@import "src/styles/_mixins.scss";
+
+.photoGallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $primary-dark;
+  
+}
+
+.wrapper {
+  color: $primary-white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: $primary-width-mobile;
+  overflow: hidden;
+
+
+  @include tablet {
+    width: $primary-width-tablet;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 50px;
+  }
+
+  @include laptop {
+    width: $primary-width-laptop;
+  }
+}
+
+.swiper {
+  height: 100px !important;
+
+  @include tablet {
+    height: 200px !important;
+  }
+  @include laptop {
+    height: 500px !important;
+  }
+
+  :global(.swiper-wrapper) {
+    align-items: center;
+  }
+
+  :global(.swiper-slide) {
+    height: fit-content;
+    // width: 300px !important;
+  }
+}
+
+.h1 {
+  font-size: 36px;
+}
+
+.home {
+  display: none;
+  @include tablet {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+.mobailHome {
+  max-width: 100%;
+  display: block;
+  @include tablet {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+  }
+  @include laptop {
+    
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.photo {
+  padding-bottom: 65%;
+  position: relative;
+  transition: all 250ms;
+}
+
+.backdrop {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  transition: all 250ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoGallery1,
+.photoGallery2,
+.photoGallery3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+}
+
+.photoGallery1 {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.photoGallery2 {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.photoGallery3 {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide {
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+
+.mySwiper {
+  height: 100;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper,
+.swiper-slide {
+  width: 156px;
+  height: 100px;
+  opacity: 0.4;
+  object-fit: cover;
+}
+
+.mySwiper,
+.swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide {
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.mySwiper2 {
+  max-height: 200px;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+}
+.mySwiper {
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+} 

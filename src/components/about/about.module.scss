@@ -1,0 +1,99 @@
+@import "src/styles/variables";
+@import "src/styles/_mixins.scss";
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $secondary-black;
+}
+
+.wrapper {
+  color: $primary-white;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  width: $primary-width-mobile;
+  margin-top: 1.875rem;
+  padding-bottom: 3.125rem;
+
+  @include tablet {
+    width: $primary-width-tablet;
+  }
+
+  @include laptop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: $primary-width-laptop;
+    margin: 8.75rem 0px 8.75rem 0px;
+  }
+}
+
+.img {
+  width: $primary-width-mobile;
+  height: 15rem;
+
+  @include tablet {
+    width: $primary-width-tablet;
+    height: 23.75rem;
+  }
+  @include laptop {
+    width: 36.75rem;
+    height: 22.5rem;
+  }
+}
+
+.text {
+  order: -1;
+
+  @include laptop {
+    order: 0;
+    margin-left: 1.25rem;
+  }
+}
+
+.h1 {
+  font-size: $heading-primary-font-size-sm;
+  text-align: start;
+  margin: 0.625rem 0 0.625rem 0;
+
+  @include tablet {
+    font-size: $heading-primary-font-size-md;
+  }
+  @include laptop {
+    font-size: $heading-primary-font-size-lg;
+  }
+}
+
+.paragraph {
+  font-size: $primary-font-size-sm;
+  @include tablet {
+    font-size: $primary-font-size-md;
+    
+  }
+}
+
+.paragraph2{
+  display: none;
+  @include tablet{
+    display: inline;
+  }
+}
+
+.orange{
+  color: #FFC42C;
+  cursor: pointer;
+  @include tablet{
+    display: none;
+  }
+}
+.hidden{
+  display: none;
+  @include tablet{
+    display: none;
+  }
+}

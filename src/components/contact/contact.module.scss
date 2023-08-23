@@ -1,0 +1,265 @@
+@import "src/styles/variables";
+@import "src/styles/_mixins.scss";
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $primary-dark;
+}
+
+.wrapper {
+  color: $primary-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: $primary-width-mobile;
+  margin: 1.25rem 0 1.25rem 0;
+
+  @include tablet {
+    width: $primary-width-tablet;
+  }
+  @include laptop {
+    width: $primary-width-laptop;
+  }
+}
+
+.h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: $heading-primary-font-size-sm;
+
+  @include tablet {
+    font-size: $heading-primary-font-size-md;
+  }
+  @include laptop {
+    font-size: $heading-primary-font-size-lg;
+  }
+}
+
+.adresAndMap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20.5rem;
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include laptop {
+    flex-direction: row;
+  }
+}
+
+.contacts {
+  border: 1px solid #ffd465;
+  width: 328px;
+  padding: 0.5625rem;
+  @include tablet {
+    width: $primary-width-tablet;
+    padding: 1.25rem;
+  }
+  @include laptop {
+    width: 35.625rem;
+    padding: 1.875rem;
+  }
+}
+
+.h2 {
+  padding-top: 0.625rem;
+  margin-top: 0;
+  margin-bottom: 0.9375rem;
+  font-size: 1rem;
+  @include tablet {
+    font-size: 1.5rem;
+  }
+}
+
+.connection {
+  display: flex;
+}
+
+.phoneiadres {
+  font-size: $primary-font-size-sm;
+  width: 100%;
+  @include tablet {
+    font-size: $primary-font-size-md;
+  }
+}
+
+.phone {
+  display: flex;
+  // gap: 1rem;
+  white-space: nowrap;
+
+  img {
+    margin-right: 0.7rem;
+  }
+}
+
+.adres {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  justify-content: space-between;
+
+  img {
+    margin-right: 0.7rem;
+  }
+}
+
+.social {
+  display: flex;
+
+  align-items: center;
+
+  margin-left: auto;
+  // @include laptop {
+  //   border-right: 1px solid;
+  // }
+}
+
+.facebook {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+  @include tablet {
+    width: 2rem;
+    margin-right: 10px;
+  }
+}
+
+.application {
+  background-color: $secondary-gray2;
+  width: 100%;
+  order: 2;
+  margin-top: 1.25rem;
+  text-align: center;
+  border: 2px solid transparent;
+  @include tablet {
+    width: $primary-width-tablet;
+    padding: 1.25rem;
+  }
+  @include laptop {
+    width: 35.625rem;
+    text-align: start;
+    padding: 1.875rem;
+  }
+}
+
+.paragraph {
+  font-size: $primary-font-size-sm;
+  @include tablet {
+    font-size: $primary-font-size-md;
+  }
+}
+
+.btnInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9375rem;
+  width: 100%;
+
+  @include laptop {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+    padding: 0.625rem;
+  }
+}
+
+.input {
+  outline: 0;
+  border: 1px solid #eeba34;
+  color: $primary-white;
+  margin-bottom: 0.625rem;
+  width: 18.5rem;
+  height: 2.0625rem;
+  padding: 0.125rem;
+  background-color: $secondary-gray2;
+  @include tablet {
+    width: 18rem;
+    display: flex;
+    flex-direction: row;
+  }
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+    padding: 0.625rem;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0.625rem 0 25px 0;
+
+  @include laptop {
+    display: flex;
+    justify-content: end;
+    margin-top: auto;
+
+    margin-bottom: 1.3rem;
+  }
+}
+
+.button {
+  width: 6.125rem;
+  height: 2rem;
+  margin: 0;
+
+  background: linear-gradient(
+    99.45deg,
+    #eeba34 25.18%,
+    #ffd465 37.87%,
+    #ffc42c 46.89%,
+    #ffd465 55.24%,
+    #eeba34 71.6%,
+    #f8b638 86.63%
+  );
+  @include tablet {
+    width: 10.5rem;
+    height: 2.75rem;
+  }
+}
+
+.map {
+  display: block;
+  border: 2px solid transparent;
+  margin-top: 1.25rem;
+  height: 10rem;
+  width: 350px;
+  margin-top: 1.2rem auto 0 auto;
+  @include tablet {
+    width: $primary-width-tablet;
+    height: 18.75rem;
+  }
+  @include laptop {
+    width: 35rem;
+    height: 35rem;
+    margin-left: 10px;
+    margin-top: 0;
+  }
+}

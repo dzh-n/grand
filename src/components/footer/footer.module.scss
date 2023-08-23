@@ -1,0 +1,83 @@
+@import "src/styles/variables";
+@import "src/styles/_mixins.scss";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $secondary-dark;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: $primary-width-mobile;
+  padding: 1.5625rem 0px 1.5625rem 0px;
+  @include tablet {
+    width: $primary-width-tablet;
+  }
+  @include laptop {
+    width: $primary-width-laptop;
+  }
+
+  .logoTextIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo {
+    width: 3rem;
+    @include tablet {
+      width: 4.5rem;
+    }
+    @include laptop {
+      width: 5rem;
+    }
+  }
+
+  .text {
+    display: none;
+    cursor: pointer;
+    @include tablet {
+      color: $primary-white;
+      display: flex;
+      gap: 1.25rem;
+    }
+  }
+
+  .social {
+    display: flex;
+    // gap: 0.6rem;
+  }
+
+  .facebook {
+    width: 1.5rem;
+    margin-right: .6rem;
+  }
+
+  p {
+    text-align: center;
+    color: $primary-white;
+    padding: 0.5rem 0rem 0rem 0rem;
+    border-top: 1px solid;
+    width: 200px;
+    margin-top: 40px;
+    font-size: $primary-font-size-sm;
+    @include tablet {
+      font-size: $primary-font-size-md;
+      padding: 1rem 2rem 0rem 2rem;
+      width: 400px;
+    }
+    @include laptop {
+      width: 500px;
+    }
+    span {
+      color: $secondary-red;
+    }
+  }
+}

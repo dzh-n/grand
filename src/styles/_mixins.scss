@@ -1,0 +1,32 @@
+
+  
+  // Below 600px
+  @mixin mobile {
+    @media screen and (min-width: 37.5em) {
+      @content;
+    }
+  }
+  
+  // Below 700px
+  @mixin tablet-small {
+    @media screen and (min-width: 44rem) {
+      @content;
+    }
+  }
+  
+  // Below 800px
+  @mixin tablet {
+    @media screen and (min-width: 50em) {
+      @content;
+    }
+  }
+  
+
+  
+  // Below 1200px
+  @mixin laptop {
+    @media screen and (min-width: 75rem) {
+      @content;
+    }
+  }
+  

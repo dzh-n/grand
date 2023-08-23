@@ -1,0 +1,244 @@
+@import "src/styles/variables";
+@import "src/styles/_mixins.scss";
+
+.advantages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  color: $primary-white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: $primary-width-mobile;
+  margin-top: 3.75rem;
+  padding-bottom: 3.125rem;
+  overflow: hidden ;
+
+  @include tablet {
+    width: $primary-width-tablet;
+  }
+  @include laptop {
+    width: $primary-width-laptop;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .h1 {
+    font-size: $heading-primary-font-size-sm;
+    margin: 0;
+
+    @include tablet {
+      font-size: $heading-primary-font-size-md;
+    }
+    @include laptop {
+      font-size: $heading-primary-font-size-lg;
+    }
+  }
+}
+
+.paragraph {
+  display: none;
+  @include tablet {
+    display: block;
+  }
+}
+
+.sliderWrapper {
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+.card {
+  background-color: $secondary-black;
+  text-align: center;
+  border: 1px solid #eeba34;
+  padding: 0.9375rem 0px 0.9375rem 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.h2 {
+  font-size: 0.9375rem;
+  margin: 0.625rem 0 0.625rem 0;
+  @include tablet {
+    font-size: 1.125rem;
+  }
+}
+
+.paragraph2 {
+  font-size: $secondary-font-size-sm;
+  @include tablet {
+    font-size: $primary-font-size-sm;
+  }
+}
+
+.imgAdvantages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.75rem;
+  gap: 2rem;
+  width: 100%;
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.parkingcomand {
+  position: relative;
+  width: $primary-width-mobile;
+
+}
+
+.parking {
+  position: absolute;
+  top: 11rem;
+  font-size: 1.25rem;
+  left: 0.625rem;
+
+  @include tablet{
+    top: 14.5rem;
+    left: 0.625rem;
+  }
+
+  @include laptop{
+    top: 20rem;
+    left: 0.625rem;
+  }
+}
+
+.parkingImg{
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  @include tablet{
+    width: 100%;
+    height: 300px;
+  }
+  @include laptop{
+    width: 588px;
+    height: 400px;
+  }
+}
+.closedYardImg{
+  width: 175px;
+  display: block;
+  object-fit: cover;
+margin: 10px;
+  @include tablet{
+    width: 255px;
+    height: 138px;
+  }
+  @include laptop{
+    width: 283px;
+    height: 188px;
+    margin: 0;
+  }
+}
+.playgroundImg{
+  width: 175px;
+  display: block;
+  object-fit: cover;
+ margin: 10px;
+  @include tablet{
+    width: 255px;
+    height: 138px;
+  }
+  @include laptop{
+    width: 283px;
+    height: 188px;
+    margin: 0;
+  }
+}
+
+.borderbottom {
+  border-bottom: 1px solid #eeba34;
+  padding-bottom: 0.4rem;
+}
+
+.colImg {
+  display: flex;
+  flex-direction: row;
+  @include tablet{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0.8em;
+  }
+  @include laptop{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.8em;
+  }
+}
+
+.playgroundcomand {
+  position: relative;
+}
+
+.waterSystem {
+  display: none;
+  
+  @include laptop {
+    width: 100%;
+    height: 188px;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.videoSurveillanceComand{
+  display: none;
+  @include laptop{
+    display: block;
+  position: relative;}
+}
+.waterSystemComand{
+  display: none;
+  @include laptop{
+    display: block;
+  position: relative;}
+}
+
+.videoSurveillance {
+ display: none;
+  @include laptop {
+    display: block;
+    width: 100%;
+    height: 188px;
+    object-fit: cover;
+  }
+}
+
+.playground {
+  position: absolute;
+  top: 5.3rem;
+  left: 1.2rem;
+  font-size: 12px;
+
+  @include tablet{
+    top: 6.5rem;
+    left: 1rem;
+  }
+
+  @include laptop{
+    top: 8.125rem;
+    left: 0.625rem;
+  }
+}
+
+.slider {
+  gap: 0.93rem;
+}

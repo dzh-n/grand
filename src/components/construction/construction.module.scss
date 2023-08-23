@@ -1,0 +1,121 @@
+@import "src/styles/variables";
+@import "src/styles/_mixins.scss";
+
+
+.construction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $primary-dark;
+}
+
+.wrapper {
+  color: $primary-white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: $primary-width-mobile;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  @include tablet{
+    width: $primary-width-tablet;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+  @include laptop{
+    width: $primary-width-laptop;
+    margin-top: 60px;
+    padding-bottom: 50px;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+@include tablet{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+}
+
+.h1{
+  font-size:$heading-primary-font-size-sm;
+  margin: 20px;
+  white-space: nowrap;
+  @include tablet{
+    font-size:$heading-primary-font-size-md;
+  }
+  @include laptop{
+    font-size:$heading-primary-font-size-lg;
+  }
+}
+
+.select{
+  display: flex;
+  flex-direction: row;
+}
+
+.year {
+  width: 87px;
+  height: 32px;
+  font-weight: bold;
+  margin: 10px 30px 10px 0;
+
+  background-color: #ffc42c;
+  outline: none;
+  font-size: $primary-font-size-sm;
+  @include tablet {
+    width: 141px;
+    height: 48px;
+    margin-right: 30px;
+    padding: 10px;
+    font-size: $primary-font-size-md;
+  }
+  @include laptop {
+    width: 141px;
+    height: 48px;
+  
+  }
+}
+
+.month{
+    border: 1px solid white;
+    background-color: $primary-dark;
+    color: $primary-white;
+    padding: 5px;
+    margin-top: 10px;
+    width: 102px ;
+    height: 32px;
+    @include tablet {
+      width: 158px ;
+      height: 48px;
+    }
+
+}
+
+.swiper{
+  width: 100%;
+ margin-top: 10px;
+}
+
+.builder{
+width: 242px;
+height: 240px;
+display: block;
+object-fit: cover;
+@include tablet{
+  width: 441px;
+height: 380px;
+}
+@include laptop{
+  width: 690px;
+height: 500px;
+}
+}

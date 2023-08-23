@@ -1,0 +1,108 @@
+@import "src/styles/variables";
+@import "src/styles/_mixins.scss";
+
+.modalWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $primary-dark;
+}
+
+.modal {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5;
+}
+
+.modalActive {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: 0.5;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modalContent {
+  padding: 20px;
+  width: 100%;
+  transform: scale(0.5);
+  transition: 0.4s all;
+  @include tablet{
+    width: 50vw;
+  }
+}
+
+.modalContentActive {
+  padding: 20px;
+  background: white;
+  width: 100%;
+  transition: 0.4s all;
+  transform: scale(1);
+  @include tablet{
+    width: 50vw;
+  }
+}
+
+.btnImg{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  height: 1.5rem;
+  white-space: nowrap;
+  gap: 0.625rem;
+  background: $secondary-gray;
+  margin-top: 0.25rem;
+  border: none;
+font-size: $primary-font-size-sm;
+  @include tablet {
+    width: 10rem;
+    font-size: $primary-font-size-md;
+  }
+  @include laptop {
+    width: 12rem;
+    height: 2rem;
+  }
+  background: linear-gradient(
+    99.45deg,
+    #eeba34 25.18%,
+    #ffd465 37.87%,
+    #ffc42c 46.89%,
+    #ffd465 55.24%,
+    #eeba34 71.6%,
+    #f8b638 86.63%
+  );
+}
+
+.icon{
+  width: 1.3rem;
+  height: 1.3rem;
+ 
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}

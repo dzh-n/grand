@@ -1,0 +1,107 @@
+@import "src/styles/variables";
+@import "src/styles/_mixins.scss";
+
+.mainBaner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $secondary-black;
+}
+
+.wrapper {
+  color: $primary-white;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  width: $primary-width-mobile;
+  margin-top: 5rem;
+
+  @include tablet {
+    width: $primary-width-tablet;
+  }
+  @include laptop {
+    margin-top: 9rem;
+  }
+
+  @include laptop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: $primary-width-laptop;
+  }
+
+  .h1 {
+    font-size: 1.875rem;
+    margin: 0.625rem 0 0.625rem 0;
+    text-align: center;
+
+
+    @include tablet {
+      font-size: 3.5rem;
+      text-align: start;
+    }
+    @include laptop {
+      font-size: 4.25rem;
+    }
+  }
+}
+
+.grand {
+  border-bottom: 1px solid #ffd465;
+  @include laptop {
+    border: 0;
+  }
+}
+
+.shoh {
+  @include laptop {
+  
+    border-top: 1px solid #eeba34;
+    
+  }
+}
+
+.paragraph {
+  font-size: $primary-font-size-sm;
+  @include tablet {
+    font-size: $primary-font-size-md;
+  }
+}
+
+.btn {
+  width: 9rem;
+  height: 2rem;
+  margin: 1rem 0px 1rem 0px;
+  border: none;
+  background: linear-gradient(
+    99.45deg,
+    #eeba34 25.18%,
+    #ffd465 37.87%,
+    #ffc42c 46.89%,
+    #ffd465 55.24%,
+    #eeba34 71.6%,
+    #f8b638 86.63%
+  );
+
+  @include laptop{
+    width: 10rem;
+  }
+}
+
+.img {
+  width: $primary-width-mobile;
+  height: 17.5rem;
+
+  @include tablet {
+    width: $primary-width-tablet;
+    height: 26.875rem;
+
+  }
+  @include laptop {
+    width: 43.125rem;
+    height: 37.5rem;
+  }
+}
