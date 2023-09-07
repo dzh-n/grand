@@ -2,18 +2,45 @@ import React from "react";
 import classes from "./mainBaner.module.scss";
 import home1 from "../img/home1.png";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 function MainBaner() {
+  const textAnimation = {
+    hidden: { x: -300, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+  const imgAnimation = {
+    hidden: { x: 300, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
   return (
     <div className={classes.mainBaner}>
       <div className={classes.wrapper}>
-        <div className={classes.text}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={textAnimation}
+          transition={{
+            duration: 0.8,
+          }}
+          className={classes.text}
+        >
           <h1 className={classes.h1}>
             <span className={classes.grand}> GRAND</span>{" "}
             <span className={classes.shoh}>SHOH</span> PALACE
           </h1>
           <p className={classes.paragraph}>
-            ️СОВРЕМЕННЫЙ ЖИЛОЙ КОМПЛЕКС БИЗНЕС КЛАССА <br />
+            СОВРЕМЕННЫЙ ЖИЛОЙ КОМПЛЕКС БИЗНЕС КЛАССА <br />
             В САМОМ СЕРДЦЕ СТОЛИЦЫ;
             <br />
             КВАРТИРЫ С ФУНКЦИОНАЛЬНОЙ ПЛАНИРОВКОЙ;
@@ -31,10 +58,59 @@ function MainBaner() {
           >
             <button className={classes.btn}>Оставить заявку</button>
           </Link>
-        </div>
-        <div className={classes.img}>
-          <img className={classes.img} src={home1} alt="" />
-        </div>
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={imgAnimation}
+          transition={{
+            duration: 0.8,
+          }}
+          className={classes.img}
+        >
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            // navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className={classes.mySwiper}
+          >
+            <SwiperSlide>
+              <img className={classes.img} src={home1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={classes.img} src={home1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={classes.img} src={home1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={classes.img} src={home1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={classes.img} src={home1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={classes.img} src={home1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={classes.img} src={home1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={classes.img} src={home1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className={classes.img} src={home1} alt="" />
+            </SwiperSlide>
+          </Swiper>
+        </motion.div>
       </div>
     </div>
   );

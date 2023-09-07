@@ -17,22 +17,31 @@
   align-items: center;
   flex-direction: column;
   width: $primary-width-mobile;
-  margin-top: 1.25rem;
-  padding: 0.625rem 0px 0.625rem 0px;
+  margin-top: 40px;
+  padding: 0 0px 10px 0px;
   @include tablet {
     width: $primary-width-tablet;
+    padding-bottom: 30px;
   }
   @include laptop {
+    margin-top: 140px;
     width: $primary-width-laptop;
+    padding-bottom: 40px;
   }
 }
 
 .h1 {
-  font-size: 1rem;
+  margin: 16px 0 0;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 44px;
+
   @include tablet {
     font-size: 1.75rem;
   }
   @include laptop {
+    margin: 40px 0 24px;
     font-size: 2rem;
   }
 }
@@ -40,8 +49,14 @@
 .paragraph {
   font-size: $primary-font-size-sm;
   text-align: center;
+  line-height: 24px;
+  font-family: "Noto Sans";
+  font-weight: 400;
+  opacity: 60%;
+
   @include tablet {
     font-size: $primary-font-size-md;
+    margin: 0 0 40px;
   }
 }
 .inputIbutton {
@@ -49,12 +64,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @include laptop{
+  @include laptop {
     display: flex;
     flex-direction: row;
   }
 }
-.inputs{
+.inputs {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,25 +79,53 @@
     flex-direction: row;
   }
 }
-.input {
+.inputName {
   outline: 0;
   border: 1px solid #eeba34;
   color: $primary-white;
   font-size: $primary-font-size-sm;
   margin: 0.625rem;
-  width: 18.75rem;
-  padding: 0.625rem;
+  width: 264px;
+  padding: 8px;
   background-color: $secondary-gray2;
-  @include tablet{
+  @include tablet {
+    padding: 10px;
+    width: 300px;
+    font-size: $primary-font-size-md;
+  }
+  @include laptop {
+    padding: 12px;
+    width: 280px;
+    font-size: $primary-font-size-md;
+  }
+}
+.inputPhone {
+  outline: 0;
+  border: 1px solid #eeba34;
+  color: $primary-white;
+  font-size: $primary-font-size-sm;
+  margin: 0.625rem;
+  width: 264px;
+  padding: 8px;
+  background-color: $secondary-gray2;
+  @include tablet {
+    padding: 10px;
+    width: 300px;
+    font-size: $primary-font-size-md;
+  }
+  @include laptop {
+    padding: 12px;
+    width: 350px;
     font-size: $primary-font-size-md;
   }
 }
 
 .buttonSend {
   width: 6.126rem;
-  height: 2rem;
+  height: 32px;
   margin: 1.25rem 0 1.25rem 0;
-
+  color: $secondary-font-color-black;
+  border: none;
   background: linear-gradient(
     99.45deg,
     #eeba34 25.18%,
@@ -94,6 +137,6 @@
   );
   @include tablet {
     width: 10.5rem;
-    height: 2.75rem;
+    height: 44px;
   }
 }

@@ -7,7 +7,6 @@
   align-items: center;
   width: 100%;
   background-color: $primary-dark;
-  
 }
 
 .wrapper {
@@ -19,7 +18,6 @@
   width: $primary-width-mobile;
   overflow: hidden;
 
-
   @include tablet {
     width: $primary-width-tablet;
     display: flex;
@@ -27,10 +25,10 @@
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
-    padding-bottom: 50px;
   }
 
   @include laptop {
+    margin-top: 140px;
     width: $primary-width-laptop;
   }
 }
@@ -56,7 +54,17 @@
 }
 
 .h1 {
-  font-size: 36px;
+  font-weight: 600;
+  font-size:20px;
+  margin: 0 0 40px;
+  line-height: 49px;
+  @include tablet{
+    font-size: 32px;
+  }
+  @include laptop{
+    font-size: $heading-primary-font-size-lg;
+
+  }
 }
 
 .home {
@@ -76,7 +84,6 @@
     width: 100%;
   }
   @include laptop {
-    
     width: 100%;
     height: 100%;
   }
@@ -168,7 +175,6 @@
   background-position: center;
 }
 
-
 .mySwiper {
   height: 100;
   box-sizing: border-box;
@@ -178,14 +184,12 @@
 .mySwiper,
 .swiper-slide {
   width: 156px;
-  height: 100px;
-  opacity: 0.4;
+  height: 121px;
+  // opacity: 0.4;
   object-fit: cover;
-}
-
-.mySwiper,
-.swiper-slide-thumb-active {
-  opacity: 1;
+  img {
+    opacity: 0.4;
+  }
 }
 
 .swiper-slide {
@@ -199,18 +203,138 @@
 .mySwiper2 {
   max-height: 200px;
   height: 100%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 48px;
+  position: sticky;
+  z-index: 9;
+  margin-top: -22px;
+  z-index: 9;
+}
+.arrow_button {
+  background-color: transparent;
+  img {
+    width: 24px;
+    object-fit: contain;
+  }
+}
+.swiper {
+  @include tablet {
+    :global(.swiper-button-prev) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(./../img/logo/arrowL.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 13px;
+      width: 40px;
+      height: 9px;
+      bottom: 0 !important;
+      position: sticky;
+      left: 81%;
+      &::after {
+        font-size: 0;
+      }
+    }
+    :global(.swiper-button-next) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(./../img/logo/arrowR.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 40px;
+      height: 9px;
+      bottom: 0px;
+      position: sticky;
+      left: 100%;
+      &::after {
+        font-size: 0;
+      }
+    }
+    :global(.swiper-pagination) {
+      max-width: max-content;
+      position: absolute;
+      left: 88%;
+    }
+  }
+  @include laptop {
+    :global(.swiper-button-prev) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(./../img/logo/arrowL.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 12px;
+      width: 40px;
+      height: 9px;
+      bottom: 0 !important;
+      position: sticky;
+      left: 89%;
+      &::after {
+        font-size: 0;
+      }
+    }
+    :global(.swiper-button-next) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(./../img/logo/arrowR.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 40px;
+      height: 9px;
+      bottom: 0px;
+      position: sticky;
+      left: 100%;
+      &::after {
+        font-size: 0;
+      }
+    }
+    :global(.swiper-pagination) {
+      max-width: max-content;
+      position: absolute;
+      left: 93%;
+    }
+  }
+}
+
+.mySwiper {
+  width: 100%;
+  height: 150px;
+  padding-bottom: 40px;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-}
-.mySwiper {
-  width: 100%;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  :global(.swiper-slide-thumb-active) {
+    img {
+      opacity: 1 !important;
+    }
   }
-} 
+  :global(.swiper-pagination) {
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

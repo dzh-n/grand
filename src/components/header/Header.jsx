@@ -1,9 +1,10 @@
 import classes from "./header.module.scss";
 import logo from "../img/logo/logo.svg";
+import logoLaptop from "../img/logo/logoLaptop.svg";
 import cross from "../img/logo/cross.svg";
+import phone from "../img/logo/headPhone.svg";
 import burger from "../img/logo/burger.svg";
 import burgerMobail from "../img/logo/burgerMobail.svg";
-import phone from "../img/logo/headPhone.svg";
 import { Link } from "react-scroll";
 import { useState } from "react";
 
@@ -14,8 +15,8 @@ function Header() {
     <header className={classes.header}>
       <div className={classes.wrapper}>
         <div className={classes.wrapperMobail}>
-        <img className={classes.phone} src={phone} alt="" />
-          <img className={classes.logo} src={logo} alt="" />
+          <img src={phone} className={classes.phone} alt="" />
+          <img className={classes.logoLaptop} src={logoLaptop} alt="" />
           <div className={classes.text}>
             <Link
               onClick={() => setActive("1")}
@@ -27,7 +28,7 @@ function Header() {
               duration={600}
               to="about"
             >
-              О жилом комплексе
+              О комплексе
             </Link>
             <Link
               onClick={() => setActive("2")}
@@ -97,17 +98,16 @@ function Header() {
               <div className={classes.cross}>
                 <img src={cross} alt="" />
               </div>
-            ) : (
-              <div><img className={classes.burgerLaptop} src={burger} alt="" />
-              <img className={classes.burgerMobail} src={burgerMobail} alt="" /></div>
-
+            ) : (<div>
+              <img className={classes.burgerMobail} src={burgerMobail} alt="" />
+              <img className={classes.burgerLaptop} src={burger} alt="" /></div>
             )}
           </div>
         </div>
         {open && (
           <div className={classes.textMobail}>
             <Link
-              onClick={() => setActive("1")}
+              onClick={() => setActive(1)}
               className={active == 1 ? classes.active : classes.notActive}
               activeClass="active"
               spy={true}
@@ -116,7 +116,7 @@ function Header() {
               duration={600}
               to="about"
             >
-              О жилом комплексе
+              О комплексе
             </Link>
             <Link
               onClick={() => setActive("2")}
@@ -131,7 +131,7 @@ function Header() {
               Преимущества
             </Link>
             <Link
-              onClick={() => setActive("3")}
+              onClick={() => setActive(3)}
               className={active == 3 ? classes.active : classes.notActive}
               activeClass="active"
               spy={true}
@@ -143,7 +143,7 @@ function Header() {
               Планировки
             </Link>
             <Link
-              onClick={() => setActive("4")}
+              onClick={() => setActive(4)}
               className={active == 4 ? classes.active : classes.notActive}
               activeClass="active"
               spy={true}

@@ -7,14 +7,18 @@ function CardResidence() {
   return (
     <div className={classes.cardResidence}>
       <div className={classes.wrapper}>
-        <a href="/grand"><div className={classes.grand}>
-          <p className={classes.paragraph}>GRAND SHOH PALACE</p>
-          <img className={classes.grandLogo} src={logo} alt="" />
-        </div></a>
-        <a href="/plaza"><div className={classes.grand}>
-          <p className={classes.paragraph}>ШОХ ПАЛАС PLAZA</p>
-          <img className={classes.plazaLogo} src={logo2} alt="" />
-        </div></a>
+        <a href="https://grand.shohpalace.tj">
+          <div className={classes.grand}>
+            <p className={classes.paragraph}>GRAND SHOH PALACE</p>
+            <img className={classes.grandLogo} src={logo} alt="" />
+          </div>
+        </a>
+        <a href="/plaza">
+          <div className={classes.grand}>
+            <p className={classes.paragraph}>ШОХ ПАЛАС PLAZA</p>
+            <img className={classes.plazaLogo} src={logo2} alt="" />
+          </div>
+        </a>
       </div>
     </div>
   );

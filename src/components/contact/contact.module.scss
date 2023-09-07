@@ -16,12 +16,14 @@
   justify-content: center;
   align-items: center;
   width: $primary-width-mobile;
-  margin: 1.25rem 0 1.25rem 0;
-
+  margin: 1rem 0 60px 0;
+  overflow: hidden;
   @include tablet {
     width: $primary-width-tablet;
   }
   @include laptop {
+    margin-top: 140px;
+    margin-bottom: 140px;
     width: $primary-width-laptop;
   }
 }
@@ -29,10 +31,13 @@
 .h1 {
   text-align: center;
   margin-top: 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: 10px;
   font-size: $heading-primary-font-size-sm;
-
+  font-weight: 600;
+  font-family: "Noto Sans";
+  line-height: 49px;
   @include tablet {
+    margin-bottom: 40px;
     font-size: $heading-primary-font-size-md;
   }
   @include laptop {
@@ -64,15 +69,19 @@
   padding: 0.5625rem;
   @include tablet {
     width: $primary-width-tablet;
-    padding: 1.25rem;
+    padding: 2rem;
   }
   @include laptop {
-    width: 35.625rem;
+    width: 570px;
+    margin-left: 10px;
     padding: 1.875rem;
   }
 }
 
 .h2 {
+  font-family: "Noto Sans";
+  font-weight: 600;
+  line-height: 33px;
   padding-top: 0.625rem;
   margin-top: 0;
   margin-bottom: 0.9375rem;
@@ -141,13 +150,14 @@
   order: 2;
   margin-top: 1.25rem;
   text-align: center;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   @include tablet {
     width: $primary-width-tablet;
     padding: 1.25rem;
   }
   @include laptop {
-    width: 35.625rem;
+    margin-top: 50px;
+    width: 36.3rem;
     text-align: start;
     padding: 1.875rem;
   }
@@ -155,6 +165,10 @@
 
 .paragraph {
   font-size: $primary-font-size-sm;
+  line-height: 24px;
+  font-weight: 400;
+  opacity: 60%;
+  
   @include tablet {
     font-size: $primary-font-size-md;
   }
@@ -184,7 +198,6 @@
   @include laptop {
     display: flex;
     flex-direction: column;
-    padding: 0.625rem;
   }
 }
 
@@ -193,12 +206,12 @@
   border: 1px solid #eeba34;
   color: $primary-white;
   margin-bottom: 0.625rem;
-  width: 18.5rem;
-  height: 2.0625rem;
-  padding: 0.125rem;
+  width: 264px;
+  padding: 8px;
   background-color: $secondary-gray2;
   @include tablet {
-    width: 18rem;
+    width: 300px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
   }
@@ -220,16 +233,17 @@
     display: flex;
     justify-content: end;
     margin-top: auto;
-
-    margin-bottom: 1.3rem;
+    margin-bottom: 9px;
+    // margin-bottom: 1.3rem;
   }
 }
 
 .button {
-  width: 6.125rem;
-  height: 2rem;
+  width: 6.126rem;
+  height: 32px;
   margin: 0;
-
+  color: $secondary-font-color-black;
+  border: none;
   background: linear-gradient(
     99.45deg,
     #eeba34 25.18%,

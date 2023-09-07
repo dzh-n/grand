@@ -4,6 +4,7 @@ import facebook from "../img/logo/facebook.svg";
 import instagram from "../img/logo/instagram.svg";
 import telegram from "../img/logo/telegram.svg";
 import logo from "../img/logo/logo.svg";
+import logoLaptop from "../img/logo/logoLaptop.svg";
 import { Link } from "react-scroll";
 
 function Footer() {
@@ -11,7 +12,7 @@ function Footer() {
     <div className={classes.footer}>
       <div className={classes.wrapper}>
         <div className={classes.logoTextIcon}>
-          <img className={classes.logo} src={logo} alt="" />
+          <img className={classes.logoLaptop} src={logoLaptop} alt="" />{" "}
           <div className={classes.text}>
             <Link
               activeClass="active"
@@ -56,9 +57,9 @@ function Footer() {
             </div>
           </div>
         </div>
-      
+
         <p>
-          Product by <span>BO</span>/BO
+          Created by <span>BO</span>/BO
         </p>
       </div>
     </div>

@@ -7,7 +7,7 @@
   align-items: center;
   width: 100%;
   background-color: $primary-dark;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
   overflow: hidden;
 }
 
@@ -21,6 +21,7 @@
     width: $primary-width-tablet;
   }
   @include laptop {
+    margin-top: 140px;
     width: $primary-width-laptop;
   }
 }
@@ -32,48 +33,88 @@
 .h1 {
   text-align: center;
   font-size: $heading-primary-font-size-sm;
+  font-weight: 600;
+  font-family: "Noto Sans";
+  line-height: 49px;
+
   @include tablet {
     text-align: start;
     font-size: $heading-primary-font-size-md;
   }
   @include laptop {
+    margin-bottom: 55px;
+    margin-top: 0;
     font-size: $heading-primary-font-size-lg;
   }
 }
 
-.select{
+.select {
   display: block;
   width: 191px;
   height: 32px;
   outline: none;
-
+  color: $secondary-font-color-black;
+  border: none;
   margin: 0 auto 10px;
   background: linear-gradient(
-        99.45deg,
-        #eeba34 25.18%,
-        #ffd465 37.87%,
-        #ffc42c 46.89%,
-        #ffd465 55.24%,
-        #eeba34 71.6%,
-        #f8b638 86.63%
-      );
-  @include tablet{
+    99.45deg,
+    #eeba34 25.18%,
+    #ffd465 37.87%,
+    #ffc42c 46.89%,
+    #ffd465 55.24%,
+    #eeba34 71.6%,
+    #f8b638 86.63%
+  );
+  @include tablet {
     display: none;
   }
 }
 
-.swiper{
+.block__mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    display: none;
+  }
+}
+
+.swiper {
+  display: none;
   overflow: visible !important;
+  :global(.swiper-pagination) {
+    display: none;
+  }
+
+  @include tablet {
+    display: block;
+    .swiper-wrapper {
+      padding-bottom: 40px;
+    }
+    :global(.swiper-pagination) {
+      display: block;
+      bottom: 0px !important;
+      :global(.swiper-pagination-bullet) {
+        background-color: #ffc42c;
+        width: 40px;
+        height: 2px;
+        border-radius: 0;
+      }
+    }
+    :global(.swiper-wrapper) {
+      padding-bottom: 40px;
+    }
+  }
 }
 
 .imgBtn {
   display: flex;
   flex-direction: column;
-  border: 2px solid $secondary-gray;
+  border: 1px solid $secondary-gray;
   padding: 1.25rem;
 
   &:hover {
-    border: 2px solid #ffd465;
+    border: 1px solid #ffd465;
     .btn {
       border: none;
       background: linear-gradient(
@@ -97,7 +138,7 @@
   gap: 0.625rem;
   background: $secondary-gray;
   margin-top: 0.25rem;
-display: none;
+  display: none;
   @include tablet {
     display: block;
     width: 13rem;
@@ -106,4 +147,22 @@ display: none;
   @include laptop {
     width: 14.75rem;
   }
+}
+
+.items {
+  text-decoration: none;
+  padding: 0;
+}
+.item_show {
+  display: block;
+}
+.item_none {
+  display: none;
+}
+
+.viewer {
+  position: relative !important;
+  z-index: 999999 !important;
+  background-color: #fff;
+  background: #fff;
 }

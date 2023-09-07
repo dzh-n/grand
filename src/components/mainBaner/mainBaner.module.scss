@@ -16,13 +16,15 @@
   flex-direction: column;
   align-items: start;
   width: $primary-width-mobile;
-  margin-top: 5rem;
-
+  margin-top: 4rem;
+  overflow: hidden;
+  padding-bottom: 30px;
   @include tablet {
     width: $primary-width-tablet;
+    margin-top: 7rem;
   }
   @include laptop {
-    margin-top: 9rem;
+    margin-top: 210px;
   }
 
   @include laptop {
@@ -34,10 +36,12 @@
   }
 
   .h1 {
-    font-size: 1.875rem;
+    font-family: 'Noto Sans';
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 93px;
     margin: 0.625rem 0 0.625rem 0;
     text-align: center;
-
 
     @include tablet {
       font-size: 3.5rem;
@@ -50,7 +54,7 @@
 }
 
 .grand {
-  border-bottom: 1px solid #ffd465;
+  border-bottom: 2px solid #ffd465;
   @include laptop {
     border: 0;
   }
@@ -58,14 +62,17 @@
 
 .shoh {
   @include laptop {
-  
-    border-top: 1px solid #eeba34;
-    
+    display: inline-block;
+    padding-right: 53px;
+    border-top: 2px solid #eeba34;
   }
 }
 
 .paragraph {
   font-size: $primary-font-size-sm;
+  opacity: 60%;
+  font-weight: 400;
+  line-height: 24px;
   @include tablet {
     font-size: $primary-font-size-md;
   }
@@ -74,8 +81,9 @@
 .btn {
   width: 9rem;
   height: 2rem;
-  margin: 1rem 0px 1rem 0px;
+  margin: 0 0px 1rem 0px;
   border: none;
+  color: $secondary-font-color-black;
   background: linear-gradient(
     99.45deg,
     #eeba34 25.18%,
@@ -86,8 +94,24 @@
     #f8b638 86.63%
   );
 
-  @include laptop{
+  @include tablet {
+    margin-top: 15px;
+  }
+  @include laptop {
     width: 10rem;
+  }
+}
+.mySwiper {
+  :global(.swiper-pagination) {
+    :global(.swiper-pagination-bullet) {
+      background-color: #ffc42c;
+      width: 20px;
+      height: 2px;
+      border-radius: 0;
+      @include tablet {
+        width: 30px;
+      }
+    }
   }
 }
 
@@ -98,7 +122,6 @@
   @include tablet {
     width: $primary-width-tablet;
     height: 26.875rem;
-
   }
   @include laptop {
     width: 43.125rem;

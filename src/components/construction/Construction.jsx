@@ -4,14 +4,29 @@ import builder from "../img/builder.jpg";
 import builder2 from "../img/builder2.jpg";
 import builder3 from "../img/builder3.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { motion } from "framer-motion";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 
 function Construction() {
+  const topAnimation = {
+    hidden: { y: 300, opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+    },
+  };
   return (
     <div id="construction" className={classes.construction}>
-      <div className={classes.wrapper}>
+      <motion.div
+        initial="hidden"
+        whileInView="animate"
+        variants={topAnimation}
+        transition={{
+          duration: 0.5,
+        }}
+        className={classes.wrapper}
+      >
         <div className={classes.row}>
           <h1 className={classes.h1}>ХОД СТРОИТЕЛЬСТВА</h1>
           <div className={classes.select}>
@@ -36,36 +51,56 @@ function Construction() {
         </div>
         <div className={classes.swiper}>
           <Swiper
-            slidesPerView={1.5}
-            spaceBetween={30}
+            slidesPerView={2}
+            navigation={true}
+            loop
             breakpoints={{
-              720: {
-                slidesPerView: 1.5,
-                spaceBetween: 10,
+              768: {
+                slidesPerView: 2,
               },
               1200: {
-                slidesPerView: 1.5,
-                spaceBetween: 10,
+                slidesPerView: 3,
               },
             }}
             pagination={{
-              clickable: true,
+              type: "fraction",
             }}
-            modules={[Pagination]}
-    
+            style={{
+              "--swiper-navigation-color": "#fff",
+              "--swiper-pagination-color": "#fff",
+            }}
+            modules={[Pagination, Navigation]}
+            className={classes.slider}
+            onAfterInit={(swiper) => {
+              console.log(swiper.activeIndex)
+              console.log(swiper.slides[swiper.activeIndex])
+            }}
+            onSlideChange={(swiper) => {
+              console.log(swiper.activeIndex)
+              console.log(swiper.slides[swiper.activeIndex])
+            }}
           >
-            <SwiperSlide>
+            <SwiperSlide className={classes.slide}>
               <img className={classes.builder} src={builder} alt="" />
             </SwiperSlide>
-            <SwiperSlide>
-            <img className={classes.builder} src={builder3} alt="" />
+            <SwiperSlide className={classes.slide}>
+              <img className={classes.builder} src={builder3} alt="" />
             </SwiperSlide>
-            <SwiperSlide>
-             <img className={classes.builder} src={builder2} alt="" />
+            <SwiperSlide className={classes.slide}>
+              <img className={classes.builder} src={builder2} alt="" />
+            </SwiperSlide>
+            <SwiperSlide className={classes.slide}>
+              <img className={classes.builder} src={builder} alt="" />
+            </SwiperSlide>
+            <SwiperSlide className={classes.slide}>
+              <img className={classes.builder} src={builder3} alt="" />
+            </SwiperSlide>
+            <SwiperSlide className={classes.slide}>
+              <img className={classes.builder} src={builder2} alt="" />
             </SwiperSlide>
           </Swiper>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

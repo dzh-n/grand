@@ -16,10 +16,11 @@
   flex-direction: column;
   align-items: start;
   width: $primary-width-mobile;
-  margin-top: 1.875rem;
-  padding-bottom: 3.125rem;
-
+  margin-top: 1rem;
+  padding-bottom: 50px;
+  overflow: hidden;
   @include tablet {
+    padding-bottom: 0;
     width: $primary-width-tablet;
   }
 
@@ -29,7 +30,7 @@
     justify-content: space-between;
     align-items: center;
     width: $primary-width-laptop;
-    margin: 8.75rem 0px 8.75rem 0px;
+    margin: 110px 0px 140px 0px;
   }
 }
 
@@ -52,7 +53,7 @@
 
   @include laptop {
     order: 0;
-    margin-left: 1.25rem;
+    margin-left: 126px;
   }
 }
 
@@ -60,6 +61,9 @@
   font-size: $heading-primary-font-size-sm;
   text-align: start;
   margin: 0.625rem 0 0.625rem 0;
+  font-weight: 600;
+  font-family: "Noto Sans";
+  line-height: 49px;
 
   @include tablet {
     font-size: $heading-primary-font-size-md;
@@ -70,30 +74,33 @@
 }
 
 .paragraph {
+  opacity: 60%;
   font-size: $primary-font-size-sm;
+  line-height: 24px;
+  font-weight: 400;
   @include tablet {
     font-size: $primary-font-size-md;
-    
   }
 }
 
-.paragraph2{
+.paragraph2 {
   display: none;
-  @include tablet{
+  @include tablet {
     display: inline;
   }
 }
 
-.orange{
-  color: #FFC42C;
+.orange {
+  color: #ffc42c;
   cursor: pointer;
-  @include tablet{
+  font-family: "Asimov";
+  @include tablet {
     display: none;
   }
 }
-.hidden{
+.hidden {
   display: none;
-  @include tablet{
+  @include tablet {
     display: none;
   }
 }

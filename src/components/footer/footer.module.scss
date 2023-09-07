@@ -30,20 +30,23 @@
     width: 100%;
   }
 
-  .logo {
-    width: 3rem;
-    @include tablet {
-      width: 4.5rem;
-    }
-    @include laptop {
-      width: 5rem;
-    }
+.logoLaptop{
+  width: 3rem;
+  @include tablet {
+    width: 4.5rem;
   }
+  @include laptop {
+    width: 5rem;
+  }
+}
 
   .text {
     display: none;
     cursor: pointer;
     @include tablet {
+      font-weight: 400;
+      line-height: 16px;
+      opacity: 60%;
       color: $primary-white;
       display: flex;
       gap: 1.25rem;
@@ -57,7 +60,7 @@
 
   .facebook {
     width: 1.5rem;
-    margin-right: .6rem;
+    margin-right: 0.6rem;
   }
 
   p {

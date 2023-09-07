@@ -3,27 +3,71 @@ import classes from "./photoGallery.module.scss";
 import photoGallery1 from "../img/photoGallery1.png";
 import photoGallery2 from "../img/photoGallery2.png";
 import photoGallery3 from "../img/photoGallery3.png";
+import prev from "../img/logo/arrowL.svg";
+import next from "../img/logo/arrowR.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
+import ModalGallery from "./modalGallery/ModalGallery";
 
 function PhotoGallery() {
+  const [activeImage, setActiveImage] = useState(null);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const swiperRef = useRef();
+  const swiperRefDeckstop = useRef();
+
+  const swiperAnimation = {
+    hidden: { y: 20, opacity: 0, scale: 0.5 },
+    animate: {
+      y: 0,
+      scale: 1,
+      opacity: 1,
+    },
+  };
+
+  const onClose = () => {
+    setActiveImage(null);
+  };
+
+  const handleClickImage = (image) => () => {
+    setActiveImage(image);
+  };
 
   return (
     <div className={classes.photoGallery}>
-      <div className={classes.wrapper}>
-        <h1 className={classes.h1}>Фотогалерея</h1>
+      {activeImage && <ModalGallery image={activeImage} close={onClose} />}
+      <motion.div
+        initial="hidden"
+        whileInView="animate"
+        variants={swiperAnimation}
+        transition={{
+          duration: 0.8,
+        }}
+        className={classes.wrapper}
+      >
+        <h1 className={classes.h1}>ФOTOГАЛЕРЕЯ</h1>
         <div className={classes.home}>
           <Swiper
             slidesPerView={3}
             spaceBetween={24}
             loop={true}
+            navigation={true}
             initialSlide={0}
             className={classes.swiper}
+            pagination={{
+              type: "fraction",
+            }}
+            style={{
+              "--swiper-navigation-color": "#fff",
+              "--swiper-pagination-color": "#fff",
+            }}
+            modules={[Pagination, Navigation]}
             onSlideChange={(swiper) => {
               swiper.slides.forEach((slide, index) => {
                 let activeSlide = swiper.slides[index + 1];
@@ -69,7 +113,7 @@ function PhotoGallery() {
               });
             }}
           >
-            <SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery3)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
@@ -79,7 +123,7 @@ function PhotoGallery() {
                 />
               </div>
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery1)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
@@ -89,7 +133,7 @@ function PhotoGallery() {
                 />
               </div>
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
@@ -99,7 +143,7 @@ function PhotoGallery() {
                 />
               </div>
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
@@ -109,7 +153,7 @@ function PhotoGallery() {
                 />
               </div>
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
@@ -119,8 +163,7 @@ function PhotoGallery() {
                 />
               </div>
             </SwiperSlide>
-
-            <SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
@@ -134,49 +177,71 @@ function PhotoGallery() {
         </div>
         <div className={classes.mobailHome}>
           <Swiper
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
             style={{
               "--swiper-navigation-color": "#fff",
               "--swiper-pagination-color": "#fff",
             }}
             spaceBetween={10}
-            navigation={false}
-            // thumbs={{ swiper: thumbsSwiper }}
             thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
-            modules={[FreeMode, Navigation, Thumbs]}
+            modules={[FreeMode, Pagination, Thumbs]}
             className={classes.mySwiper2}
           >
-            <SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery1)}>
               <img src={photoGallery1} />
             </SwiperSlide>
-            <SwiperSlide>
-            <img src={photoGallery2} />
+            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
+              <img src={photoGallery2} />
             </SwiperSlide>
-            <SwiperSlide>
-            <img src={photoGallery3} />
+            <SwiperSlide onClick={handleClickImage(photoGallery3)}>
+              <img src={photoGallery3} />
             </SwiperSlide>
           </Swiper>
           <Swiper
             onSwiper={setThumbsSwiper}
+            style={{
+              "--swiper-navigation-color": "#fff",
+              "--swiper-pagination-color": "#fff",
+            }}
             spaceBetween={10}
+           
+            pagination={{
+              type: "fraction",
+            }}
             slidesPerView={2}
             freeMode={true}
             watchSlidesProgress={true}
-            modules={[FreeMode, Navigation, Thumbs]}
+            modules={[FreeMode, Navigation, Thumbs, Pagination]}
             className={classes.mySwiper}
           >
-            <SwiperSlide>
-              <div className={thumbsSwiper ? classes.active:classes.backdrop}>
-            <img src={photoGallery1} /></div>
+            <SwiperSlide className={classes.item}>
+              <img src={photoGallery1} />
             </SwiperSlide>
-            <SwiperSlide>
-            <img src={photoGallery2} />
+            <SwiperSlide className={classes.item}>
+              <img src={photoGallery2} />
             </SwiperSlide>
-            <SwiperSlide>
-            <img src={photoGallery3} />
+            <SwiperSlide className={classes.item}>
+              <img src={photoGallery3} />
             </SwiperSlide>
           </Swiper>
+          <div className={classes.buttons}>
+            <div
+              className={classes.arrow_button}
+              onClick={() => swiperRef.current?.slidePrev()}
+            >
+              <img src={prev} alt="prev" />
+            </div>
+            <div
+              className={classes.arrow_button}
+              onClick={() => swiperRef.current?.slideNext()}
+            >
+              <img src={next} alt="next" />
+            </div>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

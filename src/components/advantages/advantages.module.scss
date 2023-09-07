@@ -18,25 +18,29 @@
   align-items: center;
   flex-direction: column;
   width: $primary-width-mobile;
-  margin-top: 3.75rem;
-  padding-bottom: 3.125rem;
-  overflow: hidden ;
+  margin-top: 1.5rem;
+  padding-bottom: 40px;
+  overflow: hidden;
 
   @include tablet {
+    margin-top: 40px;
     width: $primary-width-tablet;
   }
   @include laptop {
     width: $primary-width-laptop;
   }
-
   .text {
     text-align: center;
+    overflow: hidden;
+    line-height: 24px;
   }
 
   .h1 {
     font-size: $heading-primary-font-size-sm;
     margin: 0;
-
+    font-weight: 600;
+    font-family: "Noto Sans";
+    line-height: 49px;
     @include tablet {
       font-size: $heading-primary-font-size-md;
     }
@@ -45,10 +49,49 @@
     }
   }
 }
-
+.slider_swiper {
+  .swiper-wrapper {
+    padding-bottom: 25px;
+  }
+}
+.sliderWrapper {
+  .swiper-wrapper {
+    padding-bottom: 40px;
+  }
+  :global(.swiper-pagination) {
+    bottom: 0px !important;
+    :global(.swiper-pagination-bullet) {
+      background-color: #ffc42c;
+      width: 24px;
+      height: 2px;
+      border-radius: 0;
+      @include tablet {
+        width: 40px;
+      }
+    }
+  }
+  :global(.swiper-wrapper) {
+    padding-bottom: 25px;
+  }
+}
 .paragraph {
   display: none;
   @include tablet {
+    font-family: "Noto Sans";
+    opacity: 60%;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    display: block;
+  }
+  @include laptop {
+    font-family: "Noto Sans";
+    opacity: 70%;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 24px;
+    margin-bottom: 40px;
     display: block;
   }
 }
@@ -68,15 +111,24 @@
 }
 
 .h2 {
-  font-size: 0.9375rem;
-  margin: 0.625rem 0 0.625rem 0;
+  font-family: "Noto Sans";
+  font-size: 13px;
+  margin: 16px 0;
+  font-weight: 500;
+  line-height: 18px;
+  
   @include tablet {
     font-size: 1.125rem;
   }
 }
 
 .paragraph2 {
-  font-size: $secondary-font-size-sm;
+  font-size: 10px;
+  font-family: "Noto Sans";
+  font-weight: 400;
+  line-height: 21px;
+  opacity: 70%;
+
   @include tablet {
     font-size: $primary-font-size-sm;
   }
@@ -95,69 +147,84 @@
     flex-direction: row;
     justify-content: space-between;
   }
+  @include laptop {
+    margin-top: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .parkingcomand {
   position: relative;
   width: $primary-width-mobile;
-
 }
 
 .parking {
   position: absolute;
   top: 11rem;
-  font-size: 1.25rem;
   left: 0.625rem;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 27px;
 
-  @include tablet{
+  @include tablet {
     top: 14.5rem;
     left: 0.625rem;
+    font-size: 20px;
   }
 
-  @include laptop{
+  @include laptop {
     top: 20rem;
     left: 0.625rem;
   }
 }
 
-.parkingImg{
+.parkingImg {
   width: 100%;
   display: block;
   object-fit: cover;
-  @include tablet{
+  @include tablet {
     width: 100%;
     height: 300px;
   }
-  @include laptop{
+  @include laptop {
     width: 588px;
     height: 400px;
   }
 }
-.closedYardImg{
+.closedYardImg {
   width: 175px;
   display: block;
   object-fit: cover;
-margin: 10px;
-  @include tablet{
+  margin: 10px;
+  @include tablet {
     width: 255px;
     height: 138px;
   }
-  @include laptop{
+  @include laptop {
     width: 283px;
     height: 188px;
     margin: 0;
   }
 }
-.playgroundImg{
+.playgroundImg {
   width: 175px;
   display: block;
   object-fit: cover;
- margin: 10px;
-  @include tablet{
+  margin: 10px;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 27px;
+
+  @include tablet {
+    font-size: 20px;
     width: 255px;
     height: 138px;
   }
-  @include laptop{
+  @include laptop {
     width: 283px;
     height: 188px;
     margin: 0;
@@ -172,12 +239,12 @@ margin: 10px;
 .colImg {
   display: flex;
   flex-direction: row;
-  @include tablet{
+  @include tablet {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-gap: 0.8em;
   }
-  @include laptop{
+  @include laptop {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0.8em;
@@ -190,7 +257,7 @@ margin: 10px;
 
 .waterSystem {
   display: none;
-  
+
   @include laptop {
     width: 100%;
     height: 188px;
@@ -199,21 +266,23 @@ margin: 10px;
   }
 }
 
-.videoSurveillanceComand{
+.videoSurveillanceComand {
   display: none;
-  @include laptop{
+  @include laptop {
     display: block;
-  position: relative;}
+    position: relative;
+  }
 }
-.waterSystemComand{
+.waterSystemComand {
   display: none;
-  @include laptop{
+  @include laptop {
     display: block;
-  position: relative;}
+    position: relative;
+  }
 }
 
 .videoSurveillance {
- display: none;
+  display: none;
   @include laptop {
     display: block;
     width: 100%;
@@ -228,12 +297,12 @@ margin: 10px;
   left: 1.2rem;
   font-size: 12px;
 
-  @include tablet{
+  @include tablet {
     top: 6.5rem;
     left: 1rem;
   }
 
-  @include laptop{
+  @include laptop {
     top: 8.125rem;
     left: 0.625rem;
   }

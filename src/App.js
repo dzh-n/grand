@@ -1,5 +1,4 @@
 import classes from "./App.scss";
-import Header from "./components/header/Header";
 import About from "./components/about/About";
 import Advantages from "./components/advantages/Advantages";
 import Construction from "./components/construction/Construction";
@@ -10,7 +9,8 @@ import Layout from "./components/layout/Layout";
 import MainBaner from "./components/mainBaner/MainBaner";
 import PhotoGallery from "./components/photoGallery/PhotoGallery";
 import CardResidence from "./components/cardResidence/CardResidence";
-
+import React from "react";
+import Header from "./components/header/Header";
 
 function App() {
   return (
@@ -26,7 +26,6 @@ function App() {
       <Construction />
       <Contact />
       <Footer />
-     
     </div>
   );
 }

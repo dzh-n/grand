@@ -1,7 +1,6 @@
 @import "src/styles/variables";
 @import "src/styles/_mixins.scss";
 
-
 .construction {
   display: flex;
   justify-content: center;
@@ -18,15 +17,14 @@
   width: $primary-width-mobile;
   margin-top: 10px;
   padding-bottom: 10px;
-  @include tablet{
+  @include tablet {
     width: $primary-width-tablet;
     margin-top: 20px;
     padding-bottom: 20px;
   }
-  @include laptop{
+  @include laptop {
     width: $primary-width-laptop;
-    margin-top: 60px;
-    padding-bottom: 50px;
+    margin-top: 140px;
   }
 }
 
@@ -36,41 +34,136 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-@include tablet{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
-}
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+  }
 }
 
-.h1{
-  font-size:$heading-primary-font-size-sm;
-  margin: 20px;
+.h1 {
+  font-size: $heading-primary-font-size-sm;
+  margin: 10px;
   white-space: nowrap;
-  @include tablet{
-    font-size:$heading-primary-font-size-md;
+  font-weight: 600;
+  line-height: 49px;
+
+  @include tablet {
+    margin: 20px;
+    font-size: $heading-primary-font-size-md;
   }
-  @include laptop{
-    font-size:$heading-primary-font-size-lg;
+  @include laptop {
+    font-size: $heading-primary-font-size-lg;
   }
 }
 
-.select{
+.select {
   display: flex;
   flex-direction: row;
 }
+.swiper {
+  :global(.swiper-button-prev) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./../img/logo/arrowL.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 11px;
+    width: 40px;
+    height: 9px;
+    top: auto !important;
+    bottom: 0;
+    &::after {
+      font-size: 0;
+    }
+  }
+  :global(.swiper-button-next) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./../img/logo/arrowR.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 9px;
+    margin-bottom: 11px;
+    top: auto !important;
+    position: absolute;
+    bottom: 0;
+    left: 27%;
 
+    &::after {
+      font-size: 0;
+    }
+  }
+  :global(.swiper-pagination) {
+    max-width: max-content;
+    position: absolute;
+    left: 16%;
+    bottom: 4px;
+  }
+
+  @include tablet {
+    :global(.swiper-button-prev) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("./../img/logo/arrowL.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 40px;
+      height: 9px;
+      position: absolute;
+      top: auto !important;
+      bottom: 0;
+      left: 12%;
+
+      &::after {
+        font-size: 0;
+      }
+    }
+    :global(.swiper-button-next) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("./../img/logo/arrowR.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 40px;
+      height: 9px;
+      position: absolute;
+      top: auto !important;
+      bottom: 0;
+      right: 0;
+
+      &::after {
+        font-size: 0;
+      }
+    }
+    :global(.swiper-pagination) {
+      max-width: max-content;
+      left: 20%;
+    }
+  }
+}
 .year {
   width: 87px;
   height: 32px;
   font-weight: bold;
   margin: 10px 30px 10px 0;
-
+  color: $secondary-font-color-black;
+  border: none;
   background-color: #ffc42c;
   outline: none;
   font-size: $primary-font-size-sm;
+  border-radius: 0;
   @include tablet {
     width: 141px;
     height: 48px;
@@ -81,41 +174,123 @@
   @include laptop {
     width: 141px;
     height: 48px;
-  
   }
 }
 
-.month{
-    border: 1px solid white;
-    background-color: $primary-dark;
-    color: $primary-white;
-    padding: 5px;
-    margin-top: 10px;
-    width: 102px ;
-    height: 32px;
-    @include tablet {
-      width: 158px ;
-      height: 48px;
+.month {
+  border: 1px solid white;
+  border-radius: 0;
+  background-color: $primary-dark;
+  color: $primary-white;
+  padding: 5px;
+  margin-top: 10px;
+  width: 102px;
+  height: 32px;
+  @include tablet {
+    width: 158px;
+    height: 48px;
+  }
+}
+
+.swiper {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.builder {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center right;
+}
+
+.slider {
+  height: 500px;
+  padding-bottom: 60px;
+  position: relative;
+
+  @media (max-width: 1200px) {
+    height: 300px;
+  }
+
+  @media (max-width: 768px) {
+    height: 170px;
+  }
+
+  :global(.swiper-wrapper) {
+    align-items: center;
+  }
+
+  :global(.swiper-slide) {
+    transition: all 250ms;
+
+    &::after {
+      content: "";
+      transition: all 250ms;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+    }
+  }
+
+  :global(.swiper-slide-active) {
+    width: 690px !important;
+    height: 500px;
+
+    @media (max-width: 1200px) {
+      width: 440px !important;
+      height: 300px;
     }
 
-}
+    @media (max-width: 768px) {
+      width: 270px !important;
+      height: 170px;
+    }
+  }
 
-.swiper{
-  width: 100%;
- margin-top: 10px;
-}
+  :global(.swiper-slide-next) {
+    width: 305px !important;
+    height: 450px;
 
-.builder{
-width: 242px;
-height: 240px;
-display: block;
-object-fit: cover;
-@include tablet{
-  width: 441px;
-height: 380px;
-}
-@include laptop{
-  width: 690px;
-height: 500px;
-}
+    @media (max-width: 1200px) {
+      width: 190px !important;
+      height: 250px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100px !important;
+      height: 150px;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  :global(.swiper-slide-next) {
+    & ~ div {
+      width: 204px !important;
+      height: 400px;
+
+      @media (max-width: 1200px) {
+        width: 100px !important;
+        height: 220px;
+      }
+
+      @media (max-width: 768px) {
+        width: 70px !important;
+        height: 130px;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
 }
