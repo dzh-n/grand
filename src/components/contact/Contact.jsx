@@ -70,11 +70,13 @@ function Contact() {
                 <div className={classes.phoneiadres}>
                   <div className={classes.phone}>
                     <img src={phone} alt="" />
-                    <p>(+992) 000 40-20-40</p>
+                    <p className={classes.opacity}>(+992) 000 40-20-40</p>
                   </div>
                   <div className={classes.adres}>
                     <img src={adres} alt="" />
-                    <p>г. Душанбе, Бухоро 35</p>
+                    <p className={classes.opacity}>
+                      г. Душанбе, ул. Бухоро, 45
+                    </p>
                     <div className={classes.social}>
                       <div>
                         <img
@@ -107,7 +109,7 @@ function Contact() {
               whileInView="animate"
               variants={bottomAnimation}
               viewport={{
-                amount: 'some'
+                amount: "some",
               }}
               transition={{
                 duration: 0.5,
@@ -117,7 +119,7 @@ function Contact() {
             >
               <h2 className={classes.h2}>ОСТАВЬТЕ ЗАЯВКУ</h2>
               <p className={classes.paragraph}>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                У вас остались вопросы? Оставьте свой номер, мы вам перезвоним.{" "}
               </p>
               <div className={classes.btnInput}>
                 <div className={classes.inputs}>
@@ -128,7 +130,7 @@ function Contact() {
                   />
                   <input
                     className={classes.input}
-                    placeholder="Номер телефона или email*"
+                    placeholder="Номер телефона*"
                     type="text"
                   />
                 </div>

@@ -114,6 +114,12 @@
   );
 
   @include tablet {
+    margin-right: 53px;
+    width: 9rem;
+    height: 2rem;
+  }
+  @include laptop {
+    margin-right: 0;
     width: 9rem;
     height: 2rem;
   }
@@ -153,6 +159,9 @@
 
 .textMobail {
   display: flex;
+  font-weight: 400;
+  line-height: 16px;
+  opacity: 60%;
   flex-direction: column;
   background-color: $secondary-dark;
   color: $primary-white;

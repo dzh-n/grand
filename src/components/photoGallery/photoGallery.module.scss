@@ -56,9 +56,10 @@
 .h1 {
   font-weight: 600;
   font-size:20px;
-  margin: 0 0 40px;
+  margin: 0 0 16px;
   line-height: 49px;
   @include tablet{
+    margin: 0 0 0px;
     font-size: 32px;
   }
   @include laptop{

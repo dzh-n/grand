@@ -16,10 +16,11 @@
   flex-direction: column;
   align-items: start;
   width: $primary-width-mobile;
-  margin-top: 1rem;
-  padding-bottom: 50px;
+  margin: 40px 0px 40px 0px;
+
   overflow: hidden;
   @include tablet {
+    margin: 80px 0px 80px 0px;
     padding-bottom: 0;
     width: $primary-width-tablet;
   }
@@ -30,7 +31,7 @@
     justify-content: space-between;
     align-items: center;
     width: $primary-width-laptop;
-    margin: 110px 0px 140px 0px;
+    margin: 140px 0px 140px 0px;
   }
 }
 
@@ -60,7 +61,7 @@
 .h1 {
   font-size: $heading-primary-font-size-sm;
   text-align: start;
-  margin: 0.625rem 0 0.625rem 0;
+  margin: 0 ;
   font-weight: 600;
   font-family: "Noto Sans";
   line-height: 49px;
@@ -79,6 +80,7 @@
   line-height: 24px;
   font-weight: 400;
   @include tablet {
+    margin: 24px 0 24px;
     font-size: $primary-font-size-md;
   }
 }

@@ -1,6 +1,10 @@
 import React from "react";
 import classes from "./mainBaner.module.scss";
 import home1 from "../img/home1.png";
+import home3 from "../img/home3.jpg";
+import home4 from "../img/home4.jpg";
+import home5 from "../img/home5.jpg";
+import home6 from "../img/home6.jpg";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -86,28 +90,16 @@ function MainBaner() {
               <img className={classes.img} src={home1} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={classes.img} src={home1} alt="" />
+              <img className={classes.img} src={home3} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={classes.img} src={home1} alt="" />
+              <img className={classes.img} src={home4} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={classes.img} src={home1} alt="" />
+              <img className={classes.img} src={home5} alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className={classes.img} src={home1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className={classes.img} src={home1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className={classes.img} src={home1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className={classes.img} src={home1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className={classes.img} src={home1} alt="" />
+              <img className={classes.img} src={home6} alt="" />
             </SwiperSlide>
           </Swiper>
         </motion.div>

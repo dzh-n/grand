@@ -3,6 +3,9 @@ import classes from "./photoGallery.module.scss";
 import photoGallery1 from "../img/photoGallery1.png";
 import photoGallery2 from "../img/photoGallery2.png";
 import photoGallery3 from "../img/photoGallery3.png";
+import photoGallery4 from "../img/photoGallery4.jpg";
+import photoGallery5 from "../img/photoGallery5.jpg";
+import photoGallery6 from "../img/photoGallery6.jpg";
 import prev from "../img/logo/arrowL.svg";
 import next from "../img/logo/arrowR.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -113,61 +116,61 @@ function PhotoGallery() {
               });
             }}
           >
-            <SwiperSlide onClick={handleClickImage(photoGallery3)}>
-              <div className={classes.photo}>
-                <div className={classes.backdrop} />
-                <img
-                  src={photoGallery3}
-                  className={classes.photoGallery3}
-                  alt=""
-                />
-              </div>
-            </SwiperSlide>
             <SwiperSlide onClick={handleClickImage(photoGallery1)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
                   src={photoGallery1}
+                  className={classes.photoGallery3}
+                  alt=""
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
+              <div className={classes.photo}>
+                <div className={classes.backdrop} />
+                <img
+                  src={photoGallery2}
                   className={classes.photoGallery1}
                   alt=""
                 />
               </div>
             </SwiperSlide>
-            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
+            <SwiperSlide onClick={handleClickImage(photoGallery3)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
-                  src={photoGallery2}
+                  src={photoGallery3}
                   className={classes.photoGallery2}
                   alt=""
                 />
               </div>
             </SwiperSlide>
-            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
+            <SwiperSlide onClick={handleClickImage(photoGallery4)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
-                  src={photoGallery2}
+                  src={photoGallery4}
                   className={classes.photoGallery2}
                   alt=""
                 />
               </div>
             </SwiperSlide>
-            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
+            <SwiperSlide onClick={handleClickImage(photoGallery5)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
-                  src={photoGallery2}
+                  src={photoGallery5}
                   className={classes.photoGallery2}
                   alt=""
                 />
               </div>
             </SwiperSlide>
-            <SwiperSlide onClick={handleClickImage(photoGallery2)}>
+            <SwiperSlide onClick={handleClickImage(photoGallery6)}>
               <div className={classes.photo}>
                 <div className={classes.backdrop} />
                 <img
-                  src={photoGallery2}
+                  src={photoGallery6}
                   className={classes.photoGallery2}
                   alt=""
                 />
@@ -198,6 +201,15 @@ function PhotoGallery() {
             <SwiperSlide onClick={handleClickImage(photoGallery3)}>
               <img src={photoGallery3} />
             </SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery4)}>
+              <img src={photoGallery4} />
+            </SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery5)}>
+              <img src={photoGallery5} />
+            </SwiperSlide>
+            <SwiperSlide onClick={handleClickImage(photoGallery6)}>
+              <img src={photoGallery6} />
+            </SwiperSlide>
           </Swiper>
           <Swiper
             onSwiper={setThumbsSwiper}
@@ -224,6 +236,15 @@ function PhotoGallery() {
             </SwiperSlide>
             <SwiperSlide className={classes.item}>
               <img src={photoGallery3} />
+            </SwiperSlide>
+            <SwiperSlide className={classes.item}>
+              <img src={photoGallery4} />
+            </SwiperSlide>
+            <SwiperSlide className={classes.item}>
+              <img src={photoGallery5} />
+            </SwiperSlide>
+            <SwiperSlide className={classes.item}>
+              <img src={photoGallery6} />
             </SwiperSlide>
           </Swiper>
           <div className={classes.buttons}>

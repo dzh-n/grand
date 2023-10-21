@@ -23,7 +23,9 @@ function Consultation() {
       >
         <h1 className={classes.h1}>БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</h1>
         <p className={classes.paragraph}>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+          Оставьте заявку, мы с вами свяжемся и предоставим более подробную
+          консультацию
+        </p>
         <div className={classes.inputIbutton}>
           <div className={classes.inputs}>
             <input
@@ -33,7 +35,7 @@ function Consultation() {
             />
             <input
               className={classes.inputPhone}
-              placeholder="Номер телефона или email*"
+              placeholder="Номер телефона*"
               type="text"
             />{" "}
           </div>

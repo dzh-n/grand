@@ -12,7 +12,6 @@ function About() {
     visible: {
       x: 0,
       opacity: 1,
-    
     },
   };
   const imgAnimation = {
@@ -20,7 +19,6 @@ function About() {
     visible: {
       x: 0,
       opacity: 1,
-     
     },
   };
 
@@ -33,7 +31,7 @@ function About() {
           whileInView="visible"
           variants={imgAnimation}
           transition={{
-            duration: 0.8
+            duration: 0.8,
           }}
           className={classes.img}
         >
@@ -44,20 +42,17 @@ function About() {
           whileInView="visible"
           variants={textAnimation}
           transition={{
-            duration: 0.8
+            duration: 0.8,
           }}
           className={classes.text}
         >
           <h1 className={classes.h1}>О ЖИЛОМ КОМПЛЕКСЕ</h1>
           <p className={classes.paragraph}>
-            Жилой комплекс «Шоҳ Палас Plaza» расположен рядом с зелёной зоной
-            города, которая гарантирует прекрасный вид из большинства окон.
-            Владельцы таких квартир{" "}
+            Добро пожаловать в ЖК премиум класса "Гранд Шоҳ Палас"! Располагаясь{" "}
             <span className={classes.paragraph2}>
-              получают максимум свободного пространства, ведь частью интерьера
-              их дома становится сам город. Это уникальное место для жизни
-              человека, где предоставляются огромные возможности для создания
-              истинного комфорта.
+               в самом сердце нашей столицы — напротив Нац. Банка
+              (башни-близнецы), "Гранд Шоҳ Палас" состоит из пяти блоков "А",
+              "Б" "В", "Г" и "Д" — по 20 и 22 этажа.
             </span>
             <p
               className={open ? classes.hidden : classes.orange}
@@ -67,10 +62,9 @@ function About() {
             </p>
             {open && (
               <span>
-                получают максимум свободного пространства, ведь частью интерьера
-                их дома становится сам город. Это уникальное место для жизни
-                человека, где предоставляются огромные возможности для создания
-                истинного комфорта.
+                в самом сердце нашей столицы — напротив Нац. Банка
+                (башни-близнецы), "Гранд Шоҳ Палас" состоит из пяти блоков "А",
+                "Б" "В", "Г" и "Д" — по 20 и 22 этажа.
                 <p
                   onClick={() => setOpen(!open)}
                   className={open ? classes.orange : classes.hidden}

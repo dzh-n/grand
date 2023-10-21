@@ -26,8 +26,11 @@
   .logoTextIcon {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     width: 100%;
+    @include tablet{
+      align-items: center;
+    }
   }
 
 .logoLaptop{
@@ -55,7 +58,6 @@
 
   .social {
     display: flex;
-    // gap: 0.6rem;
   }
 
   .facebook {
@@ -67,7 +69,7 @@
     text-align: center;
     color: $primary-white;
     padding: 0.5rem 0rem 0rem 0rem;
-    border-top: 1px solid;
+    border-top: 1px solid #858585;
     width: 200px;
     margin-top: 40px;
     font-size: $primary-font-size-sm;
@@ -79,8 +81,11 @@
     @include laptop {
       width: 500px;
     }
-    span {
+    .red {
       color: $secondary-red;
     }
   }
+}
+.created{
+  opacity: 60%;
 }

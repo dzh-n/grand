@@ -18,13 +18,12 @@
   width: $primary-width-mobile;
   margin-top: 4rem;
   overflow: hidden;
-  padding-bottom: 30px;
   @include tablet {
     width: $primary-width-tablet;
     margin-top: 7rem;
   }
   @include laptop {
-    margin-top: 210px;
+    margin-top: 231px;
   }
 
   @include laptop {
@@ -40,10 +39,11 @@
     font-size: 30px;
     font-weight: 600;
     line-height: 93px;
-    margin: 0.625rem 0 0.625rem 0;
+    margin: 10px 0 10px 0;
     text-align: center;
 
     @include tablet {
+      margin: 40px 0 24px 0;
       font-size: 3.5rem;
       text-align: start;
     }
@@ -81,7 +81,7 @@
 .btn {
   width: 9rem;
   height: 2rem;
-  margin: 0 0px 1rem 0px;
+  margin: 0 0px 16px 0px;
   border: none;
   color: $secondary-font-color-black;
   background: linear-gradient(
@@ -95,10 +95,14 @@
   );
 
   @include tablet {
-    margin-top: 15px;
+    width: 171px;
+    margin-bottom: 24px;
+    height: 40px;
+    margin-top: 8px;
   }
   @include laptop {
-    width: 10rem;
+    width: 243px;
+    height: 44px;
   }
 }
 .mySwiper {

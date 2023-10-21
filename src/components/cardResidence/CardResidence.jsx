@@ -15,7 +15,7 @@ function CardResidence() {
         </a>
         <a href="/plaza">
           <div className={classes.grand}>
-            <p className={classes.paragraph}>ШОХ ПАЛАС PLAZA</p>
+            <p className={classes.paragraph}>Шоҳ Палас Plaza</p>
             <img className={classes.plazaLogo} src={logo2} alt="" />
           </div>
         </a>

@@ -57,10 +57,12 @@ function Footer() {
             </div>
           </div>
         </div>
-
-        <p>
-          Created by <span>BO</span>/BO
-        </p>
+        <a href="https://bobo.tj/" target="_blank ">
+          <p>
+            <span className={classes.created}>Created by</span>
+            <span className={classes.red}>BO</span>/BO
+          </p>
+        </a>
       </div>
     </div>
   );
